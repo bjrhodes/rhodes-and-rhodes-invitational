@@ -1,4 +1,3 @@
-
 <div align="center">
   <img src="src/assets/astrogon-logo.svg" style="width:80%;" alt="Astrogon Logo" align="center" />
 </div>
@@ -8,6 +7,16 @@
 [![GitHub License](https://img.shields.io/github/license/astrogon/astrogon?color=red)](https://github.com/astrogon/astrogon/blob/main/LICENSE) [![Repo Size](https://img.shields.io/github/repo-size/astrogon/astrogon)](https://github.com/astrogon/astrogon) ![GitHub branch check runs](https://img.shields.io/github/check-runs/astrogon/astrogon/main) [![Website](https://img.shields.io/website?up_message=online&up_color=limegreen&down_message=offline&down_color=yellow&url=https%3A%2F%2Fastrogon.reednel.com%2F)](https://astrogon.reednel.com/)
 
 Astrogon is a rapidly-customizable multipurpose website template built using Astro JS, Tailwind, and a sprinkle of React.
+
+## Todo
+
+- Homepage
+  - Change background
+  - Do a Logo
+  -
+- Fixtures page
+- Invitation page
+- Invitation email
 
 ## Features
 
@@ -74,10 +83,10 @@ See [docs/tech-stack.md](docs/tech-stack.md) for more details.
 2. Use Node 22: `nvm install 22` or `nvm use 22`
 3. From the project directory, install Node dependencies: `npm install`
 4. From the project directory, build: `npm run dev`
-   1. Alternately*: `npx astro build`, `npx wrangler dev`
+   1. Alternately\*: `npx astro build`, `npx wrangler dev`
 5. See your changes live at `http://localhost:4321`
 
-> *This is relevant if you intend to deploy your site to Cloudflare. Starting with Astro 5.8, Node 18 is unsupported, but the old Cloudflare Pages uses 18 by default. Wrangler appears to be necessary to use the new Cloudflare Workers. Read about Astro deployment [here](https://docs.astro.build/en/guides/deploy/cloudflare/#cloudflare-workers).
+> \*This is relevant if you intend to deploy your site to Cloudflare. Starting with Astro 5.8, Node 18 is unsupported, but the old Cloudflare Pages uses 18 by default. Wrangler appears to be necessary to use the new Cloudflare Workers. Read about Astro deployment [here](https://docs.astro.build/en/guides/deploy/cloudflare/#cloudflare-workers).
 
 ## License
 

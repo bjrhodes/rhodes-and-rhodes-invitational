@@ -1,6 +1,6 @@
 ---
 title: Tutorials
 description: This is the docs
-image: "@assets/backgrounds/bwca-dusk.png"
+image: "@assets/backgrounds/rri-dusk.jpg"
 draft: false
 ---
