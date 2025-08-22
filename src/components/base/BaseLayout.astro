@@ -1,12 +1,12 @@
 ---
-import { plainify } from '@lib/textConverter';
-import Footer from '@components/base/Footer.astro';
-import Header from '@components/base/Header.astro';
-import ObserverScript from '@components/base/ObserverScript.astro';
-import '@/styles/main.scss';
-import { ClientRouter } from 'astro:transitions';
-import Background from '@/components/base/Background.astro';
-import { Tooltips } from 'astro-tooltips';
+import { plainify } from "@lib/textConverter";
+import Footer from "@components/base/Footer.astro";
+import Header from "@components/base/Header.astro";
+import ObserverScript from "@components/base/ObserverScript.astro";
+import "@/styles/main.scss";
+import { ClientRouter } from "astro:transitions";
+import Background from "@/components/base/Background.astro";
+import { Tooltips } from "astro-tooltips";
 
 // types for frontmatters
 export interface Props {
@@ -19,11 +19,11 @@ export interface Props {
 
 const { title, description, image, noindex, canonical } = Astro.props;
 
-const siteTitle = 'Astrogon';
-const siteDescription = 'Astrogon is a simple and elegant Astro theme.';
-const siteImage = '@assets/og-image.png';
-const siteAuthor = 'Jane Doe';
-const baseUrl = 'https://janedoe.com';
+const siteTitle = "Astrogon";
+const siteDescription = "Astrogon is a simple and elegant Astro theme.";
+const siteImage = "@assets/og-image.png";
+const siteAuthor = "Jane Doe";
+const baseUrl = "https://janedoe.com";
 ---
 
 <!DOCTYPE html>
@@ -90,7 +90,7 @@ const baseUrl = 'https://janedoe.com';
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`}
+      content={`${baseUrl}/${Astro.url.pathname.replace("/", "")}`}
     />
     <meta
       property="og:image"
