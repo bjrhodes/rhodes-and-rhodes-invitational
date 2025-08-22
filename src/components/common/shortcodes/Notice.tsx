@@ -3,9 +3,11 @@ import React from "react";
 
 function Notice({
   type,
+  className,
   children,
 }: {
   type: string;
+  className?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -15,6 +17,7 @@ function Notice({
       ${type === "tip" && "text-[#65ab24]"}
       ${type === "info" && "text-[#d7af2d]"}
       ${type === "warning" && "text-[#f43633]"}
+      ${className}
     `}
     >
       <div className="flex items-center">
