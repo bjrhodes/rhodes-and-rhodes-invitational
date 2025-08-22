@@ -2,6 +2,7 @@
 interface Props {
   label: string;
   link?: string;
+  id?: string;
   newtab?: boolean;
   type?: "primary" | "secondary";
   color?: string;
@@ -9,13 +10,14 @@ interface Props {
   glass?: boolean;
 }
 
-const { label, link, newtab=false, type="primary", color, hoverInvert=false, glass=true }: Props = Astro.props;
+const { label, link, id, newtab=false, type="primary", color, hoverInvert=false, glass=true }: Props = Astro.props;
 ---
 
 { glass ? (
   <a 
     href={link} 
     target=`${newtab ? "_blank" : ""}`
+    id={id}
     class=`no-underline inline-block hover:opacity-100 ${type == "primary" ? "" : "intersect:animate-fade opacity-0"}`
   >
     <div class=`glass-t hover:bg-opacity-20 hover:backdrop-blur-none
