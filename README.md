@@ -8,12 +8,24 @@
 
 Astrogon is a rapidly-customizable multipurpose website template built using Astro JS, Tailwind, and a sprinkle of React.
 
-## Todo
+## Todo - Manual
 
 - Homepage
   - Do a Logo
+- About
+  - Find an image
+  - Review copy
+- Fixtures
+  - Review each fixture
+  - Decide where to do putting contest / longest drive / doubles(?) and add in.
+- Invite form
+
+## Todo - CoPilot
+
 - Invitation page
+- Notice on the fixtures page that dates are provisional.
 - Invitation email
+- Footer
 
 ## Features
 

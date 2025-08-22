@@ -1,7 +1,7 @@
 ---
 title: Rhodes & Rhodes South West Invitational
 description: An exclusive, invitation-only disc golf tournament in South West England
-image: "@assets/profile/jane-doe.jpg"
+image: "@assets/DiscGolfBalloon.jpg"
 draft: false
 ---
 

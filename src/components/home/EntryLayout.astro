@@ -18,23 +18,31 @@ const { image, imageAlt, title, content, button } = entry.data;
   <section class="section">
     <div class="container">
       <div class="row justify-center">
-        <div class="text-center lg:col-6">
-          {
-            image && (
-              <div class="blur-[0px]">
-                <Image
-                  class="mb-6 w-64"
-                  src={image}
-                  alt={imageAlt}
-                  width={1024}
-                  height={1024}
-                  loading="eager"
-                />
-              </div>
-            )
-          }
-          <h1 set:html={markdownify(title)} class="mb-4" />
-          <p set:html={markdownify(content)} class="mb-8" />
+        <div
+          class="glass rounded-lg text-center p-8 md:col-10 lg:col-7 intersect:animate-fadeUp opacity-0 intersect-no-queue"
+        >
+          <div class="row justify-center">
+            <div class="text-center lg:col-6">
+              {
+                image && (
+                  <div class="blur-[0px]">
+                    <Image
+                      class="mb-6 w-64"
+                      src={image}
+                      alt={imageAlt}
+                      width={1024}
+                      height={1024}
+                      loading="eager"
+                    />
+                  </div>
+                )
+              }
+              <h1 set:html={markdownify(title)} class="mb-4" />
+              <p set:html={markdownify(content)} class="mb-8" />
+            </div>
+          </div>
+        </div>
+        <div class="text-center p-8 md:col-10 lg:col-7">
           {
             button && (
               <Button
