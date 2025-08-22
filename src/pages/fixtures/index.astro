@@ -1,12 +1,12 @@
 ---
-import CollectionLayout from "@components/poetry/CollectionLayout.astro";
+import CollectionLayout from "@components/fixtures/CollectionLayout.astro";
 import { getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
-import type { PoetryEntry } from "@/types";
+import type { FixturesEntry } from "@/types";
 import { getIndex } from "@lib/contentParser";
 
-const entryIndex = (await getIndex("fixtures")) as PoetryEntry;
-const entries = (await getEntries("fixtures", sortByDate)) as PoetryEntry[];
+const entryIndex = (await getIndex("fixtures")) as FixturesEntry;
+const entries = (await getEntries("fixtures", sortByDate)) as FixturesEntry[];
 ---
 
 <CollectionLayout entryIndex={entryIndex} entries={entries} />

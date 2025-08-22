@@ -57,9 +57,20 @@ const fixtures = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/fixtures" }),
   schema: ({ image }) =>
     searchable.extend({
-      date: z.date().optional(),
+      date: z.date(),
+      time: z.string(),
+      location: z.string(),
+      city: z.string(),
+      country: z.string().default("United Kingdom"),
+      udiscLink: z.string().url(),
       image: image().optional(),
       imageAlt: z.string().default(""),
+      accommodation: z.array(z.object({
+        name: z.string(),
+        website: z.string().url().optional(),
+        description: z.string().optional()
+      })).optional(),
+      mapEmbedUrl: z.string().url().optional(),
     }),
 });
 

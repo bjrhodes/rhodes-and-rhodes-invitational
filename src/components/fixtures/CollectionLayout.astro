@@ -1,0 +1,99 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import PageHeader from "@components/common/PageHeader.astro";
+import type { FixturesEntry } from "@/types";
+import { format } from "date-fns";
+
+interface Props {
+  entryIndex: FixturesEntry;
+  entries: FixturesEntry[];
+}
+
+const { entryIndex, entries } = Astro.props;
+
+// Sort entries by date
+const sortedEntries = entries.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+---
+
+<BaseLayout title={entryIndex.data.title} description={entryIndex.data.description}>
+  <PageHeader title={entryIndex.data.title} />
+  <section class="section">
+    <div class="flex container row justify-center">
+      <div class="col lg:col-10">
+        <div class="glass rounded-lg p-6 intersect:animate-fadeUp opacity-0">
+          <div class="prose prose-lg max-w-none mb-8">
+            <p class="text-lg text-txt-light">
+              Welcome to the Rhodes and Rhodes Invitational - a premier disc golf tournament series featuring six challenging courses across the South West of England.
+            </p>
+          </div>
+          
+          <div class="grid gap-6">
+            {
+              sortedEntries.map((entry) => (
+                <div class="border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 bg-bg-p">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div class="flex-1">
+                      <h3 class="text-h3 font-semibold mb-2">
+                        <a href={`/fixtures/${entry.id}`} class="text-txt-p hover:text-txt-s transition-colors">
+                          {entry.data.title}
+                        </a>
+                      </h3>
+                      <div class="space-y-2 text-txt-light">
+                        <div class="flex items-center gap-2">
+                          <svg class="w-5 h-5 text-txt-s" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <span class="font-medium">
+                            {format(entry.data.date, "EEEE, MMMM do yyyy")} at {entry.data.time}
+                          </span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg class="w-5 h-5 text-txt-s" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <span>{entry.data.location} - {entry.data.city}, {entry.data.country}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3">
+                      <a 
+                        href={entry.data.udiscLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-4 py-2 bg-bg-s text-txt-p rounded-lg hover:bg-bg-t transition-colors text-sm font-medium"
+                      >
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        View on UDisc
+                      </a>
+                      <a 
+                        href={`/fixtures/${entry.id}`}
+                        class="inline-flex items-center justify-center px-4 py-2 bg-txt-p text-bg-p rounded-lg hover:bg-txt-s transition-colors text-sm font-medium"
+                      >
+                        Course Details
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+          
+          <div class="mt-8 p-6 bg-bg-s rounded-lg">
+            <h3 class="text-h4 font-semibold mb-4">Tournament Information</h3>
+            <div class="prose prose-sm max-w-none">
+              <p>Each tournament follows standard disc golf rules and regulations. Please arrive 30 minutes before your scheduled tee time for registration and course briefing.</p>
+              <p>For tournament rules and regulations, please visit our <a href="/rules" class="text-txt-p hover:text-txt-s font-medium">Rules</a> page.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
