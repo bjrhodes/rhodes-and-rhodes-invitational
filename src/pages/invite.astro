@@ -1,0 +1,286 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+---
+
+<BaseLayout title="Tournament Invitation" description="You're invited to the Rhodes & Rhodes South West Invitational">
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-12 lg:col-8 xl:col-6">
+          <!-- Invitation Container -->
+          <div class="relative flex items-center justify-center min-h-[600px]">
+            
+            <!-- Golden Envelope -->
+            <div id="envelope" class="absolute z-20 envelope-container">
+              <div class="envelope-back"></div>
+              <div class="envelope-front"></div>
+              <div class="envelope-flap"></div>
+            </div>
+
+            <!-- Invitation Card -->
+            <div id="invitation-card" class="invitation-card glass rounded-lg p-8 max-w-md mx-auto text-center opacity-0">
+              <div class="mb-6">
+                <h1 class="text-3xl font-bold text-amber-800 dark:text-amber-200 mb-2">
+                  Exclusive Invitation
+                </h1>
+                <div class="w-16 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
+              </div>
+
+              <div class="mb-6">
+                <p class="text-lg mb-4 text-txt-p dark:text-darkmode-txt-p">
+                  Dear <span id="player-name-display" class="font-semibold text-amber-700 dark:text-amber-300">Valued Player</span>,
+                </p>
+                <p class="text-base mb-4 text-txt-s dark:text-darkmode-txt-s">
+                  You have been personally selected to participate in the prestigious 
+                  <strong>Rhodes & Rhodes South West Invitational</strong> disc golf tournament.
+                </p>
+                <p class="text-base text-txt-s dark:text-darkmode-txt-s">
+                  This exclusive event brings together the finest players from across the region 
+                  for an unforgettable competition experience.
+                </p>
+              </div>
+
+              <!-- RSVP Form -->
+              <form class="space-y-4">
+                <div class="text-left">
+                  <label for="player-name" class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2">
+                    Confirm Your Name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="player-name" 
+                    class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p placeholder:text-txt-light dark:placeholder:text-darkmode-txt-light focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div class="text-left">
+                  <label for="email" class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2">
+                    Email Address
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p placeholder:text-txt-light dark:placeholder:text-darkmode-txt-light focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div class="text-left">
+                  <label for="skill-level" class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2">
+                    Skill Level
+                  </label>
+                  <select 
+                    id="skill-level"
+                    class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
+                  >
+                    <option value="">Select your level</option>
+                    <option value="novice">Novice</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="professional">Professional</option>
+                  </select>
+                </div>
+
+                <button 
+                  type="submit"
+                  class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  Accept Invitation & RSVP
+                </button>
+              </form>
+
+              <p class="text-xs text-txt-light dark:text-darkmode-txt-light mt-4">
+                * No payment required. This is an invitation-only event.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+/* Envelope Styling */
+.envelope-container {
+  width: 320px;
+  height: 240px;
+  animation: envelopePopIn 1s ease-out forwards;
+  perspective: 1000px;
+}
+
+.envelope-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 25%, #ffed4e 50%, #d4af37 75%, #b8860b 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 32px rgba(212, 175, 55, 0.3),
+    inset 0 2px 8px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.envelope-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e6c447 0%, #ffd700 25%, #ffed4e 50%, #e6c447 75%, #c9932b 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px;
+  box-shadow: 
+    0 4px 16px rgba(212, 175, 55, 0.4),
+    inset 0 2px 8px rgba(255, 255, 255, 0.3);
+  z-index: 2;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: 125px;
+  background: linear-gradient(135deg, #c9932b 0%, #d4af37 25%, #ffd700 50%, #d4af37 75%, #b8860b 100%);
+  border: 2px solid #b8860b;
+  border-radius: 8px 8px 0 0;
+  transform-origin: bottom center;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 85%);
+  box-shadow: 
+    0 6px 20px rgba(212, 175, 55, 0.5),
+    inset 0 2px 8px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 4px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  animation: flapOpen 2s ease-in-out 1.5s forwards;
+}
+
+.invitation-card {
+  transform: translateY(50px) scale(0.8);
+  animation: cardSlideOut 1.5s ease-out 3s forwards;
+  z-index: 10;
+}
+
+/* Animation Keyframes */
+@keyframes envelopePopIn {
+  0% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flapOpen {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 3;
+  }
+  50% {
+    transform: rotateX(-90deg);
+    z-index: 3;
+  }
+  100% {
+    transform: rotateX(-180deg);
+    z-index: 0;
+  }
+}
+
+@keyframes cardSlideOut {
+  0% {
+    transform: translateY(50px) scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-10px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes envelopeExit {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) rotate(5deg) translateY(-20px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.3) rotate(10deg) translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* Envelope exit animation - triggered after card appears */
+.envelope-container.exit {
+  animation: envelopeExit 1s ease-in 4.5s forwards;
+}
+
+/* Additional envelope effects */
+.envelope-back::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+  border-radius: 4px;
+}
+
+.envelope-front::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+  border-radius: 4px;
+}
+</style>
+
+<script>
+// Extract and display playerName from URL parameters
+document.addEventListener('DOMContentLoaded', () => {
+  // Get player name from URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const playerName = urlParams.get('playerName') || 'Valued Player';
+  
+  // Update the display
+  const playerNameDisplay = document.getElementById('player-name-display');
+  const playerNameInput = document.getElementById('player-name');
+  
+  if (playerNameDisplay) {
+    playerNameDisplay.textContent = playerName;
+  }
+  
+  if (playerNameInput) {
+    playerNameInput.value = playerName;
+  }
+
+  // Handle envelope exit animation
+  const envelope = document.getElementById('envelope');
+  if (envelope) {
+    // Add exit class after card slide animation
+    setTimeout(() => {
+      envelope.classList.add('exit');
+    }, 4500);
+  }
+});
+</script>
