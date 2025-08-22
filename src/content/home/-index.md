@@ -1,9 +1,9 @@
 ---
 image: "@assets/astrogon-star.svg"
 imageAlt: Astrogon logo
-title: Astrogon
-content: A rapidly-customizable template for a blog, documentation, and more.
+title: Rhodes & Rhodes South West Invitational
+content: Invitation only disc golf tournament
 button:
-  label: See the Code
-  link: https://github.com/astrogon/astrogon
+  label: Fixtures
+  link: /fixtures
 ---

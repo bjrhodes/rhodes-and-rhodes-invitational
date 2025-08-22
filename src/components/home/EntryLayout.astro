@@ -1,9 +1,9 @@
 ---
-import BaseLayout from "@components/base/BaseLayout.astro";
-import { markdownify } from "@lib/textConverter";
-import Button from "@components/common/Button.astro";
-import type { HomeEntry } from "@/types";
-import { Image } from "astro:assets";
+import BaseLayout from '@components/base/BaseLayout.astro';
+import { markdownify } from '@lib/textConverter';
+import Button from '@components/common/Button.astro';
+import type { HomeEntry } from '@/types';
+import { Image } from 'astro:assets';
 
 interface Props {
   entry: HomeEntry;
@@ -40,7 +40,6 @@ const { image, imageAlt, title, content, button } = entry.data;
               <Button
                 label={button.label}
                 link={button.link}
-                newtab
                 hoverInvert
                 color=""
               />

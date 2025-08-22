@@ -11,10 +11,7 @@ Astrogon is a rapidly-customizable multipurpose website template built using Ast
 ## Todo
 
 - Homepage
-  - Change background
   - Do a Logo
-  -
-- Fixtures page
 - Invitation page
 - Invitation email
 
