@@ -1,12 +1,12 @@
 ---
-import { plainify } from '@lib/textConverter';
-import Footer from '@components/base/Footer.astro';
-import Header from '@components/base/Header.astro';
-import ObserverScript from '@components/base/ObserverScript.astro';
-import '@/styles/main.scss';
-import { ClientRouter } from 'astro:transitions';
-import Background from '@/components/base/Background.astro';
-import { Tooltips } from 'astro-tooltips';
+import { plainify } from "@lib/textConverter";
+import Footer from "@components/base/Footer.astro";
+import Header from "@components/base/Header.astro";
+import ObserverScript from "@components/base/ObserverScript.astro";
+import "@/styles/main.scss";
+import { ClientRouter } from "astro:transitions";
+import Background from "@/components/base/Background.astro";
+import { Tooltips } from "astro-tooltips";
 
 // types for frontmatters
 export interface Props {
@@ -90,7 +90,7 @@ const baseUrl = 'https://952965c4-93d8-480e-8aa6-dacd8cd64c4e.therhodes.co.uk';
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
-      content={`${baseUrl}/${Astro.url.pathname.replace('/', '')}`}
+      content={`${baseUrl}/${Astro.url.pathname.replace("/", "")}`}
     />
     <meta
       property="og:image"

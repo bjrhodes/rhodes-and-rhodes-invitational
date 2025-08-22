@@ -33,7 +33,6 @@ const about = defineCollection({
     }),
 });
 
-
 const home = defineCollection({
   loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/home" }),
   schema: ({ image }) =>
@@ -51,10 +50,11 @@ const home = defineCollection({
     }),
 });
 
-
-
 const fixtures = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/fixtures" }),
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/fixtures",
+  }),
   schema: ({ image }) =>
     searchable.extend({
       date: z.date(),
@@ -65,11 +65,15 @@ const fixtures = defineCollection({
       udiscLink: z.string().url(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      accommodation: z.array(z.object({
-        name: z.string(),
-        website: z.string().url().optional(),
-        description: z.string().optional()
-      })).optional(),
+      accommodation: z
+        .array(
+          z.object({
+            name: z.string(),
+            website: z.string().url().optional(),
+            description: z.string().optional(),
+          }),
+        )
+        .optional(),
       mapEmbedUrl: z.string().url().optional(),
     }),
 });
@@ -90,8 +94,6 @@ const rules = defineCollection({
     ),
   }),
 });
-
-
 
 const terms = defineCollection({
   loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/terms" }),

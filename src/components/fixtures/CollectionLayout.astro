@@ -13,7 +13,7 @@ const { entryIndex, entries } = Astro.props;
 
 // Sort entries by date
 const sortedEntries = entries.sort(
-  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+  (a, b) => a.data.date.getTime() - b.data.date.getTime(),
 );
 ---
 
@@ -64,7 +64,7 @@ const sortedEntries = entries.sort(
                             />
                           </svg>
                           <span class="font-medium">
-                            {format(entry.data.date, 'EEEE, MMMM do yyyy')} at{' '}
+                            {format(entry.data.date, "EEEE, MMMM do yyyy")} at{" "}
                             {entry.data.time}
                           </span>
                         </div>
@@ -89,7 +89,7 @@ const sortedEntries = entries.sort(
                             />
                           </svg>
                           <span>
-                            {entry.data.location} - {entry.data.city},{' '}
+                            {entry.data.location} - {entry.data.city},{" "}
                             {entry.data.country}
                           </span>
                         </div>

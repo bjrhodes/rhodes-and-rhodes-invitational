@@ -3,6 +3,12 @@ title: Rules
 description: Tournament rules and regulations
 
 projects:
+  - title: "Official Rules & Guidelines"
+    content:
+      - "This tournament follows the [official PDGA rules](https://www.pdga.com/rules/official-rules-disc-golf) for disc golf"
+      - "We will be scoring using **stroke play** format"
+      - "New to disc golf? Check out this [beginners guide to disc golf tournaments](https://udisc.com/blog/post/disc-golf-tournaments-a-beginners-guide#discgolfrulesandetiquette) for helpful information on rules and etiquette"
+      - "**Note:** We will NOT be following the official PDGA dress code for this tournament"
   - title: "General Tournament Rules"
     content:
       - "All participants must register before the tournament begins"
