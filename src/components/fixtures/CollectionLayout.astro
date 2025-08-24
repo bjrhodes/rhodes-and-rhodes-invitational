@@ -39,7 +39,7 @@ const sortedEntries = entries.sort(
 
         <div class="glass rounded-lg p-6 intersect:animate-fadeUp opacity-0">
           <div class="prose prose-lg max-w-none mb-8">
-            <p class="text-lg text-txt-light">
+            <p class="text-lg text-txt-light dark:text-white">
               Welcome to the Rhodes and Rhodes Invitational - a private disc
               golf tournament series featuring six challenging courses of
               eighteen holes across the South West of England.
@@ -49,18 +49,18 @@ const sortedEntries = entries.sort(
           <div class="grid gap-6">
             {
               sortedEntries.map((entry) => (
-                <div class="border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 bg-bg-p">
+                <div class="border border-border rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 bg-blur-40">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div class="flex-1">
                       <h3 class="text-h3 font-semibold mb-2">
                         <a
                           href={`/fixtures/${entry.id}`}
-                          class="text-txt-p hover:text-txt-s transition-colors"
+                          class="text-txt-p hover:text-txt-s dark:text-white transition-colors"
                         >
                           {entry.data.title}
                         </a>
                       </h3>
-                      <div class="space-y-2 text-txt-light">
+                      <div class="space-y-2 text-txt-light dark:text-white">
                         <div class="flex items-center gap-2">
                           <svg
                             class="w-5 h-5 text-txt-s"
@@ -156,18 +156,19 @@ const sortedEntries = entries.sort(
             }
           </div>
 
-          <div class="mt-8 p-6 bg-bg-s rounded-lg">
+          <div class="mt-8 p-6 rounded-lg dark:text-white">
             <h3 class="text-h4 font-semibold mb-4">Tournament Information</h3>
             <div class="prose prose-sm max-w-none">
-              <p>
+              <p class="dark:text-white">
                 Each tournament follows standard disc golf rules and
                 regulations. Please arrive 30 minutes before your scheduled tee
                 time for registration and course briefing.
               </p>
-              <p>
+              <p class="dark:text-white">
                 For tournament rules and regulations, please visit our <a
                   href="/rules"
-                  class="text-txt-p hover:text-txt-s font-medium">Rules</a
+                  class="text-txt-p hover:text-txt-s font-medium dark:text-white"
+                  >Rules</a
                 > page.
               </p>
             </div>

@@ -9,19 +9,19 @@ country: "United Kingdom"
 udiscLink: "https://app.udisc.com/applink/course/6037?tab=info"
 mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.9876543210!2d-4.1987654!3d50.3654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI2JzQ0LjQiTiAywrAzNyc1NS42Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
 accommodation:
-  - name: "Holiday Inn Express Plymouth"
-    website: "https://www.ihg.com/holidayinnexpress/hotels/gb/en/plymouth/plymi/hoteldetail"
-    description: "Modern hotel with easy access to Mount Edgcumbe via the Torpoint Ferry"
-  - name: "Duke of Cornwall Hotel Plymouth"
-    website: "https://www.dukecornwall.co.uk/"
-    description: "Historic Victorian hotel in Plymouth city centre"
+  - name: "Dan's House!"
+    description: "If he'll have you. If not, try booking.com :p"
 ---
 
-Experience disc golf at one of the most spectacular locations in the tournament series. Mount Edgcumbe offers breathtaking views across Plymouth Sound and challenging play through historic parkland.
+Experience disc golf at one of the most spectacular locations in the tournament series. Mount Edgcumbe offers breathtaking views across Plymouth Sound and challenging play through historic parkland. Players will navigate through woodland and open parkland with stunning coastal views and deer and sheep grazing.
+
+This is always a very long and challenging course, and usually a fairly windy one, so expect some frustration!
+
+We'll be capping off the round with a Longest Drive prize round, so get practicing on that arm speed!
 
 ## Course Information
 
-Set within the Mount Edgcumbe Country Park, this course takes advantage of the estate's varied landscape. Players will navigate through formal gardens, woodland, and open parkland with stunning coastal views.
+There are no fixed fees, but donations to the club are welcome.
 
 ## Getting There
 
@@ -34,3 +34,10 @@ The Mount Edgcumbe estate has over 800 years of history, and players will be thr
 ## Weather Considerations
 
 Being close to the coast, weather conditions can change quickly. Be prepared for wind and potential rain, especially in December.
+
+## What to Bring
+
+- Tournament-legal discs
+- Plenty of water
+- Weather-appropriate clothing
+- Positive attitude!

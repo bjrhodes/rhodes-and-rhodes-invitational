@@ -1,6 +1,2 @@
 User-agent: *
-Allow: /
-
-Disallow: /api/*
-
-Sitemap: https://therhodes.co.uk/sitemap-index.xml
+Disallow: *

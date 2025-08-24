@@ -43,7 +43,7 @@ import Button from '@components/common/Button.astro';
           <!-- Invitation Card -->
           <div
             id="invitation-card"
-            class="invitation-card glass rounded-lg p-8 max-w-md mx-auto text-center"
+            class="invitation-card glass rounded-lg p-8 max-w-md mx-auto text-center mb-12"
             style="display: none;"
           >
             <div class="mb-6">
@@ -73,73 +73,31 @@ import Button from '@components/common/Button.astro';
                 golf tournament.
               </p>
               <p class="text-base text-txt-s dark:text-darkmode-txt-s">
-                This exclusive event brings together the finest players from
-                across the region for an unforgettable competition experience.
+                Please check out the "about" page and the fixtures, and then
+                RSVP below.
               </p>
             </div>
 
             <!-- RSVP Form -->
-            <form class="space-y-4">
-              <div class="text-left">
-                <label
-                  for="player-name"
-                  class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2"
-                >
-                  Confirm Your Name
-                </label>
-                <input
-                  type="text"
-                  id="player-name"
-                  class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p placeholder:text-txt-light dark:placeholder:text-darkmode-txt-light focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
-                  placeholder="Your full name"
-                />
-              </div>
+            <div style="margin: 0 -2em" class="dark:bg-gray-50">
+              <script
+                src="https://nwkfufou.formester.com/widget/standard.js"
+                type="module"></script>
 
-              <div class="text-left">
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p placeholder:text-txt-light dark:placeholder:text-darkmode-txt-light focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+              <formester-standard-form
+                set-auto-height="true"
+                height="100%"
+                width="100%"
+                id="KSYiJMA9Z"
+                url="https://nwkfufou.formester.com/f/KSYiJMA9Z"
+              ></formester-standard-form>
 
-              <div class="text-left">
-                <label
-                  for="skill-level"
-                  class="block text-sm font-medium text-txt-p dark:text-darkmode-txt-p mb-2"
-                >
-                  Skill Level
-                </label>
-                <select
-                  id="skill-level"
-                  class="w-full glass rounded-lg px-4 py-3 text-txt-p dark:text-darkmode-txt-p focus:border-amber-500 focus:ring-amber-500/20 dark:focus:border-amber-400"
-                >
-                  <option value="">Select your level</option>
-                  <option value="novice">Novice</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advanced">Advanced</option>
-                  <option value="professional">Professional</option>
-                </select>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              <p
+                class="text-xs text-txt-light dark:text-darkmode-txt-light mt-4"
               >
-                Accept Invitation & RSVP
-              </button>
-            </form>
-
-            <p class="text-xs text-txt-light dark:text-darkmode-txt-light mt-4">
-              * No payment required. This is an invitation-only event.
-            </p>
+                * No payment required. This is an invitation-only event.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -460,6 +418,7 @@ import Button from '@components/common/Button.astro';
 <script>
   // Extract and display playerName from URL parameters
   document.addEventListener('DOMContentLoaded', () => {
+    let opened = false;
     // Get player name from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const playerName = urlParams.get('playerName') || 'Valued Player';
@@ -479,8 +438,11 @@ import Button from '@components/common/Button.astro';
     var envelope = document.getElementById('envelope');
     var btn_open = document.getElementById('open');
 
-    function open(e) {
-      e.preventDefault();
+    function open() {
+      if (opened) {
+        return;
+      }
+      opened = true;
       envelope?.classList.add('open');
       envelope?.classList.remove('close');
       window.setTimeout(() => {
@@ -492,8 +454,16 @@ import Button from '@components/common/Button.astro';
         }, 400);
       }, 2000);
     }
-    envelope?.addEventListener('click', open);
-    btn_open?.addEventListener('click', open);
+    envelope?.addEventListener('click', (e) => {
+      e.preventDefault();
+      open();
+    });
+    btn_open?.addEventListener('click', (e) => {
+      e.preventDefault();
+      open();
+    });
+
+    window.setTimeout(open, 2000);
 
     // @todo zoom the letter then remove and reveal the actual form!
     // @todo make the buttons into buttons!

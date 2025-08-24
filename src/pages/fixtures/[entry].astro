@@ -1,11 +1,11 @@
 ---
-import type { FixturesEntry } from "@/types";
-import { sortByDate } from "@lib/sortFunctions";
-import EntryLayout from "@components/fixtures/EntryLayout.astro";
-import { getEntries } from "@lib/contentParser";
+import type { FixturesEntry } from '@/types';
+import { sortByDate } from '@lib/sortFunctions';
+import EntryLayout from '@components/fixtures/EntryLayout.astro';
+import { getEntries } from '@lib/contentParser';
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("fixtures", sortByDate)) as FixturesEntry[];
+  const entries = (await getEntries('fixtures', sortByDate)) as FixturesEntry[];
   const pageIDs: string[] = entries.map((entry) => entry.id);
   const pageCount = pageIDs.length;
 

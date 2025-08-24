@@ -20,7 +20,7 @@
   @apply prose-blockquote:prose-p:m-0;
   // Table
   @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:border prose-table:before:content-[""] prose-table:before:dark:border-darkmode-border;
-  @apply prose-thead:border-border prose-thead:dark:border-darkmode-border prose-thead:dark:bg-darkmode-bg-t prose-thead:bg-bg-t prose-thead:bg-opacity-40 prose-thead:dark:bg-opacity-40 backdrop-blur-lg;
+  @apply prose-thead:border-border prose-thead:dark:border-darkmode-border prose-thead:dark:bg-darkmode-bg-t prose-thead:bg-bg-t prose-thead:bg-opacity-40 prose-thead:dark:bg-opacity-40;
   @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-2 prose-th:text-txt-p prose-th:dark:text-darkmode-txt-p;
   @apply prose-tr:border-border prose-tr:dark:border-darkmode-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-2 prose-td:text-txt-s prose-td:dark:text-darkmode-txt-s;

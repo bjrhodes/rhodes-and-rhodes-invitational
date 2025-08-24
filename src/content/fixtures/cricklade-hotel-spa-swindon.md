@@ -12,14 +12,13 @@ accommodation:
   - name: "Cricklade Hotel & Spa"
     website: "https://www.crickladehotel.co.uk/"
     description: "Luxury on-site accommodation with spa facilities - perfect for the tournament finale"
-  - name: "De Vere Swindon"
-    website: "https://www.devere.co.uk/swindon/"
-    description: "4-star hotel with excellent conference and leisure facilities"
 ---
 
-Conclude the Rhodes and Rhodes Invitational in style at the prestigious Cricklade Hotel & Spa. This final round promises to be memorable with luxury facilities and an excellently designed course.
+Conclude the Rhodes and Rhodes Invitational in style at the prestigious Cricklade Hotel & Spa. This final round promises to be memorable with luxury facilities and an excellently designed course right on site.
 
 ## Course Information
+
+This is a pay-to-play course at a cost of £10pp.
 
 The Cricklade course offers a fitting finale to the tournament series. Set in the grounds of this luxury hotel and spa, the course provides a premium disc golf experience with well-maintained fairways and strategic hole designs.
 
@@ -33,8 +32,11 @@ Take advantage of the hotel's spa facilities to recover from the tournament. The
 
 ## Perfect Weekend
 
-Consider making this a weekend getaway - play the tournament on Sunday morning and enjoy the spa facilities and luxury accommodation. It's the perfect way to celebrate completing the Rhodes and Rhodes Invitational series.
+Consider making this a weekend getaway - play the tournament on Saturday afternoon and Sunday morning; then enjoy the spa facilities and luxury accommodation. It's the perfect way to celebrate completing the tournament series.
 
-## Early Start
+## What to Bring
 
-With a 10am start, this gives players the rest of the day to enjoy the facilities or travel home after the tournament concludes.
+- Tournament-legal discs
+- Plenty of water
+- Weather-appropriate clothing
+- Positive attitude!

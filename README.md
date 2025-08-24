@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/astrogon-logo.svg" style="width:80%;" alt="Astrogon Logo" align="center" />
+  <img src="src/assets/logo.jpeg" style="width:80%;" alt="Astrogon Logo" align="center" />
 </div>
 
 ---
@@ -10,22 +10,13 @@ Astrogon is a rapidly-customizable multipurpose website template built using Ast
 
 ## Todo - Manual
 
-- Homepage
-  - Do a Logo
-- About
-  - Find an image
-  - Review copy
 - Fixtures
   - Review each fixture
+  - How long holes are
+    - PLYMOUTH: Add a short-course doubles round.
+  - Tag "Opening Weekend" / "Closing weekend" etc
+  - Add Green Fees notices!
   - Decide where to do putting contest / longest drive / doubles(?) and add in.
-- Invite form
-
-## Todo - CoPilot
-
-- Invitation page
-- Notice on the fixtures page that dates are provisional.
-- Invitation email
-- Footer
 
 ## Features
 

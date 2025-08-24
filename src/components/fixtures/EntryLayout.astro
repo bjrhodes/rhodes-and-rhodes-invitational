@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "@components/base/BaseLayout.astro";
-import Pagination from "@components/common/Pagination.astro";
-import Share from "@components/common/Share.astro";
-import { plainify } from "@lib/textConverter";
-import type { FixturesEntry } from "@/types";
-import { format } from "date-fns";
+import BaseLayout from '@components/base/BaseLayout.astro';
+import Pagination from '@components/common/Pagination.astro';
+import Share from '@components/common/Share.astro';
+import { plainify } from '@lib/textConverter';
+import type { FixturesEntry } from '@/types';
+import { format } from 'date-fns';
 
-import { render } from "astro:content";
-import EntryHeader from "@components/common/EntryHeader.astro";
+import { render } from 'astro:content';
+import EntryHeader from '@components/common/EntryHeader.astro';
 
 interface Props {
   entry: FixturesEntry;
@@ -40,6 +40,13 @@ const entryDescription =
   (autodescription ? plainify(entry.body!.slice(0, descriptionLength)) : null);
 ---
 
+<!-- 
+@todo
+
+- Admin and Costs
+- Difficulty
+- Add-ons and fun
+-->
 <BaseLayout title={title} description={entryDescription} image={image?.src}>
   <section class="flex container justify-center my-8">
     <div class="col md:col-10 lg:col-8">
@@ -72,7 +79,7 @@ const entryDescription =
                   </svg>
                   <div>
                     <div class="font-semibold text-txt-p">
-                      {format(date, "EEEE, MMMM do yyyy")}
+                      {format(date, 'EEEE, MMMM do yyyy')}
                     </div>
                     <div class="text-txt-light">Start time: {time}</div>
                   </div>
@@ -244,7 +251,7 @@ const entryDescription =
       <Share
         title={title}
         description={entryDescription}
-        folder={"fixtures"}
+        folder={'fixtures'}
         id={entry.id}
       />
     </div>
