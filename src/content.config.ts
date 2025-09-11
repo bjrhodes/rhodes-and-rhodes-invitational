@@ -100,9 +100,26 @@ const terms = defineCollection({
   schema: searchable,
 });
 
+const costs = defineCollection({
+  loader: glob({
+    pattern: "-index.{md,mdx}",
+    base: "./src/content/costs",
+  }),
+  schema: searchable.extend({
+    fixtures: z.array(
+      z.object({
+        name: z.string(),
+        slug: z.string(),
+        fees: z.number(),
+      }),
+    ),
+  }),
+});
+
 // Export collections
 export const collections = {
   about,
+  costs,
   fixtures,
   home,
   rules,

@@ -1,0 +1,10 @@
+---
+import type { FixturesEntry } from '@/types';
+import EntryLayout from '@components/costs/EntryLayout.astro';
+import { getIndex } from '@lib/contentParser';
+
+const entry = (await getIndex('costs')) as FixturesEntry;
+console.log(entry.data);
+---
+
+<EntryLayout entry={entry} />
