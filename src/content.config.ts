@@ -110,6 +110,7 @@ const costs = defineCollection({
       z.object({
         name: z.string(),
         slug: z.string(),
+        fees: z.number(),
       }),
     ),
   }),

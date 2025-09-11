@@ -18,8 +18,13 @@ const { title, description, fixtures } = entry.data;
         <div class="mt-8">
           <h3>Tournament Cost Calculator</h3>
           <p class="text-txt-light dark:text-darkmode-txt-light mb-6">
-            Track your tournament expenses across all fixtures. Enter costs for
-            green fees, travel, and accommodation for each venue.
+            Track your tournament expenses across all fixtures. We've prefilled
+            costs for green fees, and left space for you to estimate travel and
+            accommodation for each venue.
+          </p>
+          <p class="text-txt-light dark:text-darkmode-txt-light mb-6">
+            Once filled in, your total cost estimate will appear at the bottom
+            of the screen.
           </p>
         </div>
 
@@ -46,6 +51,7 @@ const { title, description, fixtures } = entry.data;
                       placeholder="0.00"
                       step="0.01"
                       min="0"
+                      value={fixture.fees}
                       data-cost-type="green-fees"
                       data-fixture={fixture.slug}
                     />
