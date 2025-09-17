@@ -1,8 +1,8 @@
 ---
 title: "Ashton Court - Bristol"
 description: "Round 2 of the Rhodes and Rhodes Invitational at Ashton Court, Bristol"
-date: 2025-10-05T13:00:00.000Z
-time: "11am"
+date: 2025-10-05T14:00:00.000Z
+time: "2pm"
 location: "Ashton Court"
 city: "Bristol"
 country: "United Kingdom"

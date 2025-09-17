@@ -1,8 +1,8 @@
 ---
 title: "Mendip Disc Golf Course - Winscombe"
 description: "Round 1 of the Rhodes and Rhodes Invitational at Mendip Disc Golf Course, Winscombe"
-date: 2025-10-04T11:00:00.000Z
-time: "2pm"
+date: 2025-10-04T13:00:00.000Z
+time: "1pm"
 location: "Mendip Disc Golf Course"
 city: "Winscombe"
 country: "United Kingdom"
