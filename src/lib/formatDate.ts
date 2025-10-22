@@ -1,8 +1,8 @@
 import { format as formatFn } from "date-fns-tz";
 
 export const formatDate = (
-  date: Date | string,
+  date: Date | string | undefined,
   format: string = "MMMM d, yyyy",
 ): string => {
-  return formatFn(new Date(date), format);
+  return date ? formatFn(new Date(date), format) : "";
 };

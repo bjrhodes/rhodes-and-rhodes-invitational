@@ -2,11 +2,13 @@ import type { GenericEntry } from "@/types";
 
 // Sort by date
 export const sortByDate = (entries: GenericEntry[]): GenericEntry[] => {
-  const sortedEntries = entries.sort(
-    (a: any, b: any) =>
-      new Date(b.data.date && b.data.date).valueOf() -
-      new Date(a.data.date && a.data.date).valueOf(),
-  );
+  const sortedEntries = entries
+    .filter((a: any) => !isNaN(new Date(a.data.date) as any))
+    .sort(
+      (a: any, b: any) =>
+        new Date(b.data.date && b.data.date).valueOf() -
+        new Date(a.data.date && a.data.date).valueOf(),
+    );
   return sortedEntries;
 };
 

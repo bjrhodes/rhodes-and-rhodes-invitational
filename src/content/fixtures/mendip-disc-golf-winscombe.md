@@ -1,8 +1,8 @@
 ---
 title: "Mendip Disc Golf Course - Winscombe"
-description: "Round 1 of the Rhodes and Rhodes Invitational at Mendip Disc Golf Course, Winscombe"
-date: 2025-10-04T13:00:00.000Z
-time: "1pm"
+description: "Round 2 of the Rhodes and Rhodes Invitational at Mendip Disc Golf Course, Winscombe"
+date: 2025-11-02T11:00:00.000Z
+time: "10am"
 location: "Mendip Disc Golf Course"
 city: "Winscombe"
 country: "United Kingdom"
@@ -13,7 +13,7 @@ accommodation:
     description: "Just off the motorway with easy access to Ashton Court and not too far from Mendips!"
 ---
 
-For the first course in our opening weekend, experience the challenging terrain of the Mendip Hills. Mendip Disc Golf Course winds through beautiful woodland and over rolling Mendip hill tops with stunning views.
+For the second course, experience the challenging terrain of the Mendip Hills. Mendip Disc Golf Course winds through beautiful woodland and over rolling Mendip hill tops with stunning views.
 
 ## Course Information
 
