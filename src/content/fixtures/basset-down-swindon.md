@@ -1,7 +1,7 @@
 ---
 title: "Basset Down Complex - Swindon"
 description: "Round 5 of the Rhodes and Rhodes Invitational at Basset Down Complex, Swindon"
-date: 2026-01-10T13:00:00.000Z
+date: 2026-02-14T11:00:00.000Z
 time: "1pm"
 location: "Basset Down Complex - 9/18 H Disc Golf."
 city: "Swindon"

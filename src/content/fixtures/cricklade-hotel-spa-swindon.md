@@ -1,7 +1,7 @@
 ---
 title: "Cricklade Hotel & Spa - Swindon"
 description: "Final round of the Rhodes and Rhodes Invitational at Cricklade Hotel & Spa, Swindon"
-date: 2026-01-11T10:00:00.000Z
+date: 2026-02-15T10:00:00.000Z
 time: "10am"
 location: "Cricklade Hotel & Spa"
 city: "Swindon"
@@ -32,7 +32,7 @@ Take advantage of the hotel's spa facilities to recover from the tournament. The
 
 ## Perfect Weekend
 
-Consider making this a weekend getaway - play the tournament on Saturday afternoon and Sunday morning; then enjoy the spa facilities and luxury accommodation. It's the perfect way to celebrate completing the tournament series.
+Consider making this a weekend getaway - play the tournament on Saturday afternoon and Sunday morning; then enjoy the spa facilities and luxury accommodation on Saturday night. It's the perfect way to celebrate completing the tournament series.
 
 ## What to Bring
 
