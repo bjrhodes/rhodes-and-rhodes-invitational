@@ -8,9 +8,6 @@ city: "Torpoint"
 country: "United Kingdom"
 udiscLink: "https://app.udisc.com/applink/course/6037?tab=info"
 mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.9876543210!2d-4.1987654!3d50.3654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI2JzQ0LjQiTiAywrAzNyc1NS42Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
-accommodation:
-  - name: "Dan's House!"
-    description: "If he'll have you. If not, try booking.com :p"
 ---
 
 Experience disc golf at one of the most spectacular locations in the tournament series. Mount Edgcumbe offers breathtaking views across Plymouth Sound and challenging play through historic parkland. Players will navigate through woodland and open parkland with stunning coastal views and deer and sheep grazing.
