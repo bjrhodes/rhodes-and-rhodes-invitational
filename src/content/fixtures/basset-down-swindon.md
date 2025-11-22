@@ -2,8 +2,8 @@
 title: "Basset Down Complex - Swindon"
 description: "Round 5 of the Rhodes and Rhodes Invitational at Basset Down Complex, Swindon"
 date: 2026-02-14T11:00:00.000Z
-time: "1pm"
-location: "Basset Down Complex - 9/18 H Disc Golf."
+time: "11am"
+location: "Basset Down Complex - 18 Hole Disc Golf"
 city: "Swindon"
 country: "United Kingdom"
 udiscLink: "https://app.udisc.com/applink/course/45743?tab=info"

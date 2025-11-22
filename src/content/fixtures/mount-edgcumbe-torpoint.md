@@ -2,7 +2,7 @@
 title: "Mount Edgcumbe - Torpoint"
 description: "Round 4 of the Rhodes and Rhodes Invitational at Mount Edgcumbe, Torpoint"
 date: 2025-12-06T10:00:00.000Z
-time: "11am"
+time: "10am"
 location: "Mount Edgcumbe"
 city: "Torpoint"
 country: "United Kingdom"

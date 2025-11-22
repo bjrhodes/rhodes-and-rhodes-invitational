@@ -9,9 +9,6 @@ fixtures:
   - name: "Ashton Court - Bristol"
     slug: "ashton-court-bristol"
     fees: 3.2
-  - name: "Goolastump - Beaminster"
-    slug: "goolastump-beaminster"
-    fees: 0
   - name: "Mount Edgcumbe - Torpoint"
     slug: "mount-edgcumbe-torpoint"
     fees: 0

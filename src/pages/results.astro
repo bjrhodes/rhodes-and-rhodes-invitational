@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@components/base/BaseLayout.astro';
+import PageHeader from '@/components/common/PageHeader.astro';
+// import { markdownify } from '@lib/textConverter';
+
+const title = 'Results to date';
+const description = 'This will be updated as we go!';
+
+const AshtonCourt = {
+  name: 'Ashton Court',
+  par: [4, 4, 3, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3],
+  scores: {
+    Barry: [10, 4, 4, 3, 7, 3, 6, 6, 3, 4, 4, 6, 5, 4, 5, 4, 5, 4],
+    Louise: [8, 8, 5, 3, 7, 5, 5, 7, 6, 5, 5, 6, 5, 6, 6, 5, 5, 5],
+    Will: [6, 9, 5, 3, 6, 3, 5, 5, 5, 4, 7, 5, 4, 5, 8, 5, 6, 4],
+    Tara: [8, 7, 5, 3, 5, 4, 4, 8, 5, 6, 4, 7, 5, 4, 6, 4, 5, 5],
+    Adam: [6, 5, 4, 3, 5, 4, 4, 5, 5, 4, 7, 7, 7, 5, 3, 5, 5, 4],
+    Rob: [7, 7, 4, 3, 5, 4, 5, 6, 5, 4, 4, 5, 7, 5, 5, 5, 4, 5],
+    Fin: [8, 12, 8, 3, 6, 4, 8, 8, 5, 5, 4, 5, 5, 5, 6, 5, 6, 4],
+    Aiden: null,
+  },
+};
+
+const Mendips = {
+  name: 'Mendips Activity Centre',
+  par: [3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 4, 4, 3, 3],
+  scores: {
+    Barry: [],
+    Will: [],
+    Tara: [],
+    Adam: [],
+    Rob: [],
+    Aiden: [],
+    Louise: null,
+    Fin: null,
+  },
+};
+
+const rounds = [AshtonCourt, Mendips];
+---
+
+<BaseLayout title={'title'} description={description}>
+  <PageHeader title={title} />
+</BaseLayout>
