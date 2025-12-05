@@ -25,20 +25,91 @@ const Mendips = {
   name: 'Mendips Activity Centre',
   par: [3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 4, 4, 3, 3],
   scores: {
-    Barry: [],
-    Will: [],
-    Tara: [],
-    Adam: [],
-    Rob: [],
-    Aiden: [],
+    Rob: [5, 4, 6, 5, 5, 5, 5, 4, 4, 9, 4, 6, 5, 6, 7, 6, 5, 4],
+    Barry: [6, 4, 4, 5, 4, 5, 5, 4, 4, 8, 5, 6, 8, 5, 7, 6, 5, 4],
+    Will: [5, 4, 5, 6, 6, 6, 4, 4, 5, 7, 7, 5, 6, 5, 9, 6, 5, 5],
+    Tara: [8, 5, 5, 5, 5, 6, 5, 6, 4, 8, 5, 5, 5, 5, 8, 8, 6, 5],
+    Adam: [5, 4, 7, 9, 5, 6, 6, 4, 3, 8, 6, 5, 5, 6, 8, 6, 5, 6],
+    Aiden: [6, 5, 6, 5, 4, 5, 4, 6, 6, 11, 6, 6, 6, 7, 7, 7, 6, 5],
     Louise: null,
     Fin: null,
   },
 };
 
 const rounds = [AshtonCourt, Mendips];
+
+const allPlayers = Array.from(
+  new Set(
+    rounds.reduce<(keyof typeof Mendips.scores)[]>(
+      (players, round) =>
+        players.concat(
+          Object.keys(round.scores) as (keyof typeof Mendips.scores)[]
+        ),
+      []
+    )
+  )
+);
+
+const sum = (arr: number[] | null) =>
+  arr ? arr.reduce((t, n) => t + n, 0) : 0;
+
+const ashtonMax = Object.values(AshtonCourt.scores).reduce(
+  (soFar, scores) => Math.max(soFar, sum(scores)),
+  0
+);
+const mendipMax = Object.values(Mendips.scores).reduce(
+  (soFar, scores) => Math.max(soFar, sum(scores)),
+  0
+);
+
+const allScores = allPlayers.map((name) => {
+  const ashton = {
+    total:
+      AshtonCourt.scores[name] === null
+        ? ashtonMax
+        : sum(AshtonCourt.scores[name]),
+    score: AshtonCourt.scores[name] ?? null,
+  };
+  const mendip = {
+    total:
+      Mendips.scores[name] === null ? mendipMax : sum(Mendips.scores[name]),
+    score: Mendips.scores[name] ?? null,
+  };
+
+  return {
+    name,
+    ashton,
+    mendip,
+    grand: mendip.total + ashton.total,
+  };
+});
+
+allScores.sort(({ grand: a }, { grand: b }) => (a === b ? 0 : a > b ? 1 : -1));
 ---
 
 <BaseLayout title={'title'} description={description}>
   <PageHeader title={title} />
+  <div class="container">
+    {
+      allScores.map((player) => (
+        <div class="glass rounded-lg p-4 mb-4 intersect:animate-fadeUp opacity-0">
+          <nav class="relative flex flex-wrap items-center justify-between">
+            <h4>{player.name}</h4>
+            <p class="mb-4 ">
+              <strong>Tournament score: {player.grand}</strong>
+            </p>
+          </nav>
+          <h5>Rounds</h5>
+          <p class="mb-4">
+            Ashton court: {player.ashton.total}{' '}
+            {player.ashton.score === null ? '(no-show default)' : ''}
+          </p>
+          <p class="mb-4">
+            Mendips: {player.mendip.total}{' '}
+            {player.mendip.score === null ? '(no-show default)' : ''}
+          </p>
+        </div>
+      ))
+    }
+  </div>
 </BaseLayout>
