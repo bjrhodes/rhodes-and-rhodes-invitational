@@ -36,7 +36,22 @@ const Mendips = {
   },
 };
 
-const rounds = [AshtonCourt, Mendips];
+const Edgcumbe = {
+  name: 'Mount Edgcumbe',
+  par: [3, 4, 3, 4, 3, 3, 4, 4, 4, 4, 3, 3, 4, 3, 3, 3, 3, 5],
+  scores: {
+    Rob: [4, 5, 5, 6, 4, 3, 7, 6, 5, 6, 3, 5, 8, 5, 5, 4, 3, 6],
+    Barry: [3, 4, 5, 8, 3, 4, 5, 6, 6, 5, 4, 5, 6, 4, 4, 4, 3, 5],
+    Will: [3, 6, 4, 7, 3, 4, 7, 7, 6, 6, 3, 5, 9, 5, 5, 5, 2, 7],
+    Tara: [4, 6, 4, 5, 4, 4, 5, 7, 6, 9, 5, 4, 7, 5, 6, 6, 2, 7],
+    Adam: [3, 4, 3, 9, 4, 3, 5, 7, 7, 5, 4, 5, 7, 4, 4, 6, 3, 7],
+    Aiden: null,
+    Louise: null,
+    Fin: [5, 6, 7, 6, 4, 6, 7, 7, 10, 6, 3, 5, 9, 6, 6, 4, 3, 9],
+  },
+};
+
+const rounds = [AshtonCourt, Mendips, Edgcumbe];
 
 const allPlayers = Array.from(
   new Set(
@@ -61,6 +76,10 @@ const mendipMax = Object.values(Mendips.scores).reduce(
   (soFar, scores) => Math.max(soFar, sum(scores)),
   0
 );
+const edgcumbeMax = Object.values(Edgcumbe.scores).reduce(
+  (soFar, scores) => Math.max(soFar, sum(scores)),
+  0
+);
 
 const allScores = allPlayers.map((name) => {
   const ashton = {
@@ -75,16 +94,27 @@ const allScores = allPlayers.map((name) => {
       Mendips.scores[name] === null ? mendipMax : sum(Mendips.scores[name]),
     score: Mendips.scores[name] ?? null,
   };
+  const edgcumbe = {
+    total:
+      Edgcumbe.scores[name] === null ? edgcumbeMax : sum(Edgcumbe.scores[name]),
+    score: Edgcumbe.scores[name] ?? null,
+  };
 
   return {
     name,
     ashton,
     mendip,
-    grand: mendip.total + ashton.total,
+    edgcumbe,
+    grand: mendip.total + ashton.total + edgcumbe.total,
   };
 });
 
 allScores.sort(({ grand: a }, { grand: b }) => (a === b ? 0 : a > b ? 1 : -1));
+
+const overUnder = (score: number, pars: number[]) => {
+  const delta = score - sum(pars);
+  return delta > 0 ? `+${delta}` : `-${Math.abs(delta)}`;
+};
 ---
 
 <BaseLayout title={'title'} description={description}>
@@ -101,12 +131,19 @@ allScores.sort(({ grand: a }, { grand: b }) => (a === b ? 0 : a > b ? 1 : -1));
           </nav>
           <h5>Rounds</h5>
           <p class="mb-4">
-            Ashton court: {player.ashton.total}{' '}
+            Ashton court: {player.ashton.total}
+            <span>({overUnder(player.ashton.total, AshtonCourt.par)})</span>
             {player.ashton.score === null ? '(no-show default)' : ''}
           </p>
           <p class="mb-4">
-            Mendips: {player.mendip.total}{' '}
+            Mendips: {player.mendip.total}
+            <span>({overUnder(player.mendip.total, Mendips.par)})</span>
             {player.mendip.score === null ? '(no-show default)' : ''}
+          </p>
+          <p class="mb-4">
+            Mount Edgcumbe: {player.edgcumbe.total}
+            <span>({overUnder(player.edgcumbe.total, Edgcumbe.par)})</span>
+            {player.edgcumbe.score === null ? '(no-show default)' : ''}
           </p>
         </div>
       ))
