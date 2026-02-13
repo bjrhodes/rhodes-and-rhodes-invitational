@@ -51,7 +51,37 @@ const Edgcumbe = {
   },
 };
 
-const rounds = [AshtonCourt, Mendips, Edgcumbe];
+const Basset = {
+  name: 'Basset down',
+  par: [3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3],
+  scores: {
+    Rob: null,
+    Barry: [3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3],
+    Will: null,
+    Tara: null,
+    Adam: null,
+    Aiden: null,
+    Louise: null,
+    Fin: null,
+  },
+};
+
+const Cricklade = {
+  name: 'Cricklade Hotel',
+  par: [3, 3, 5, 4, 4, 3, 3, 3, 4, 4, 4, 3, 3, 3, 4, 3, 3, 4],
+  scores: {
+    Rob: null,
+    Barry: [3, 3, 5, 4, 4, 3, 3, 3, 4, 4, 4, 3, 3, 3, 4, 3, 3, 4],
+    Will: null,
+    Tara: null,
+    Adam: null,
+    Aiden: null,
+    Louise: null,
+    Fin: null,
+  },
+};
+
+const rounds = [AshtonCourt, Mendips, Edgcumbe, Basset, Cricklade];
 
 const allPlayers = Array.from(
   new Set(
@@ -80,6 +110,14 @@ const edgcumbeMax = Object.values(Edgcumbe.scores).reduce(
   (soFar, scores) => Math.max(soFar, sum(scores)),
   0
 );
+const bassetMax = Object.values(Basset.scores).reduce(
+  (soFar, scores) => Math.max(soFar, sum(scores)),
+  0
+);
+const crickladeMax = Object.values(Cricklade.scores).reduce(
+  (soFar, scores) => Math.max(soFar, sum(scores)),
+  0
+);
 
 const allScores = allPlayers.map((name) => {
   const ashton = {
@@ -99,12 +137,25 @@ const allScores = allPlayers.map((name) => {
       Edgcumbe.scores[name] === null ? edgcumbeMax : sum(Edgcumbe.scores[name]),
     score: Edgcumbe.scores[name] ?? null,
   };
+  const basset = {
+    total: Basset.scores[name] === null ? bassetMax : sum(Basset.scores[name]),
+    score: Basset.scores[name] ?? null,
+  };
+  const cricklade = {
+    total:
+      Cricklade.scores[name] === null
+        ? crickladeMax
+        : sum(Cricklade.scores[name]),
+    score: Cricklade.scores[name] ?? null,
+  };
 
   return {
     name,
     ashton,
     mendip,
     edgcumbe,
+    basset,
+    cricklade,
     grand: mendip.total + ashton.total + edgcumbe.total,
   };
 });
@@ -120,33 +171,135 @@ const overUnder = (score: number, pars: number[]) => {
 <BaseLayout title={'title'} description={description}>
   <PageHeader title={title} />
   <div class="container">
-    {
-      allScores.map((player) => (
-        <div class="glass rounded-lg p-4 mb-4 intersect:animate-fadeUp opacity-0">
-          <nav class="relative flex flex-wrap items-center justify-between">
-            <h4>{player.name}</h4>
-            <p class="mb-4 ">
-              <strong>Tournament score: {player.grand}</strong>
+    <div style="display: grid; gap: 24px; grid-template-columns: 1fr 1fr;">
+      {
+        allScores.map((player) => (
+          <div class="glass rounded-lg p-4 mb-4 intersect:animate-fadeUp opacity-0">
+            <nav class="relative flex flex-wrap items-center justify-between">
+              <h4>{player.name}</h4>
+              <p class="mb-4 ">
+                <strong>Tournament score: {player.grand}</strong>
+              </p>
+            </nav>
+            <h5>Rounds</h5>
+            <p class="mb-4">
+              Ashton court: {player.ashton.total}
+              <span>({overUnder(player.ashton.total, AshtonCourt.par)})</span>
+              {player.ashton.score === null ? '(no-show default)' : ''}
             </p>
-          </nav>
-          <h5>Rounds</h5>
-          <p class="mb-4">
-            Ashton court: {player.ashton.total}
-            <span>({overUnder(player.ashton.total, AshtonCourt.par)})</span>
-            {player.ashton.score === null ? '(no-show default)' : ''}
-          </p>
-          <p class="mb-4">
-            Mendips: {player.mendip.total}
-            <span>({overUnder(player.mendip.total, Mendips.par)})</span>
-            {player.mendip.score === null ? '(no-show default)' : ''}
-          </p>
-          <p class="mb-4">
-            Mount Edgcumbe: {player.edgcumbe.total}
-            <span>({overUnder(player.edgcumbe.total, Edgcumbe.par)})</span>
-            {player.edgcumbe.score === null ? '(no-show default)' : ''}
-          </p>
-        </div>
-      ))
-    }
+            <p class="mb-4">
+              Mendips: {player.mendip.total}
+              <span>({overUnder(player.mendip.total, Mendips.par)})</span>
+              {player.mendip.score === null ? '(no-show default)' : ''}
+            </p>
+            <p class="mb-4">
+              Mount Edgcumbe: {player.edgcumbe.total}
+              <span>({overUnder(player.edgcumbe.total, Edgcumbe.par)})</span>
+              {player.edgcumbe.score === null ? '(no-show default)' : ''}
+            </p>
+            <p class="mb-4">
+              Basset Down: {player.basset.total}
+              <span>({overUnder(player.basset.total, Basset.par)})</span>
+              {player.basset.score === null ? '(no-show default)' : ''}
+            </p>
+            <p class="mb-4">
+              Cricklade Hotel: {player.cricklade.total}
+              <span>({overUnder(player.cricklade.total, Cricklade.par)})</span>
+              {player.cricklade.score === null ? '(no-show default)' : ''}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="glass rounded-lg p-4 mb-4 intersect:animate-fadeUp opacity-0">
+      <h4>Positions Table</h4>
+      <table style="width: 100%">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Ashton court:</th>
+            <th>Mendips:</th>
+            <th>Mount Edgcumbe:</th>
+            <th>Basset Down:</th>
+            <th>Cricklade Hotel:</th>
+            <th>Overall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Barry</td>
+            <td>1st (87)</td>
+            <td>1st (95)</td>
+            <td>1st (84)</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">1st (266)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Rob</td>
+            <td>3rd (90)</td>
+            <td>1st (95)</td>
+            <td>2nd (90)</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">2nd (275)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Adam</td>
+            <td>2nd (88)</td>
+            <td>4th (104)</td>
+            <td>2nd (90)</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">3rd (282)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Will</td>
+            <td>4th (95)</td>
+            <td>3rd (100)</td>
+            <td>4th (954</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">4th (289)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Tara</td>
+            <td>4th (95)</td>
+            <td>4th (104)</td>
+            <td>5th (96)</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">5th (295)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Louise</td>
+            <td>6th (102)</td>
+            <td>n/a</td>
+            <td>n/a</td>
+            <td></td>
+            <td></td>
+            <td style="text-align: right; font-weight: bold;">6th (319)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Fin</td>
+            <td>7th (107)</td>
+            <td>n/a</td>
+            <td>6th (109)</td>
+            <td>n/a</td>
+            <td>n/a</td>
+            <td style="text-align: right; font-weight: bold;">7th (324)</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: left">Aiden</td>
+            <td>n/a</td>
+            <td>6th (108)</td>
+            <td>n/a</td>
+            <td>n/a</td>
+            <td>n/a</td>
+            <td style="text-align: right; font-weight: bold;">7th (324)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </BaseLayout>
